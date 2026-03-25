@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+  <Dialog id="signerDialog" title="Signers Information" draggable="true" resizable="true" contentWidth="25rem">
+    <VBox class="sapUiSmallMargin">
+      <Label text="Book Keeper" labelFor="bookkeeperInput"/>
+      <Input id="bookkeeperInput" value="{signer>/bookkeeper}" width="100%" placeholder="Enter name..."/>
+
+      <Label text="Chief Accountant" labelFor="accountantInput"/>
+      <Input id="accountantInput" value="{signer>/accountant}" width="100%" placeholder="Enter name..."/>
+
+      <Label text="Director" labelFor="directorInput"/>
+      <Input id="directorInput" value="{signer>/director}" width="100%" placeholder="Enter name..."/>
+    </VBox>
+    <beginButton>
+      <Button text="OK" type="Emphasized" press=".onSignerDialogConfirm"/>
+    </beginButton>
+    <endButton>
+      <Button text="Cancel" press=".onSignerDialogCancel"/>
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>

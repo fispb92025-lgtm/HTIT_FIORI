@@ -1,0 +1,29 @@
+{
+  "generationParameters": {
+    "generationDate": "Fri Oct 17 2025 05:34:58 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "SAP System (ABAP On-Premise)",
+    "metadataFilename": "",
+    "serviceUrl": "https://my428934.s4hana.cloud.sap/sap/opu/odata/sap/ZUI_FIXED_ASSET_SRBD",
+    "appName": "fixedasset",
+    "appTitle": "Báo cáo tình hình tăng giảm TSCD",
+    "appDescription": "An SAP Fiori application.",
+    "appNamespace": "bcthtgtscd",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.136.8",
+    "enableCodeAssist": false,
+    "enableEslint": false,
+    "enableTypeScript": true,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.19.1",
+    "template": "List Report Page V2",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "FixedAsset"
+      }
+    ],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}

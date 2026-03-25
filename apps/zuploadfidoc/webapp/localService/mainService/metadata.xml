@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zsd_upload_fidoc.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="DataFIDocType">
+                <Key>
+                    <PropertyRef Name="Uuid"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="Uuid" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="Messagetxt" Type="Edm.String" Nullable="false" MaxLength="255"/>
+                <Property Name="Messagetype" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Accountingdocument" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Documentsequenceno" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Companycode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="YTransaction" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Vendor" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Reference" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="Documentdate" Type="Edm.Date"/>
+                <Property Name="Postingdate" Type="Edm.Date"/>
+                <Property Name="Documenttype" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Documentheadertext" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="Transactioncurrency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Grossinvoiceamount" Type="Edm.Decimal" Nullable="false" Precision="27" Scale="2"/>
+                <Property Name="Businessplace" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Sectioncode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Branchnumber" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Paymentblock" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Baselinedate" Type="Edm.Date"/>
+                <Property Name="Cashdiscountamount" Type="Edm.Decimal" Nullable="false" Precision="27" Scale="2"/>
+                <Property Name="Cashdiscountbase" Type="Edm.Decimal" Nullable="false" Precision="27" Scale="2"/>
+                <Property Name="Paymentmethod" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Pmtmethsupplement" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Paymentreference" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="Invoicereference" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Invoicereferencefiscalyear" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Invoiceitemreference" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Partnerbanktype" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Housebank" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Accountid" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Instruction1" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Instruction2" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Instruction3" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Instruction4" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Reasoncode" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Termsofpayment" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Cashdiscountdays1" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Cdpercentage1" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Cashdiscountdays2" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Cdpercentage2" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Netpmttermsperiod" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Fixed" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Reconaccount" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Assignmentheader" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Textheader" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Businessareaheader" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Partnerbusinessareaheader" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Contractnumber" Type="Edm.String" Nullable="false" MaxLength="13"/>
+                <Property Name="Contracttype" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Referencekey1" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Referencekey2" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Referencekey3" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Scbindicator" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Supplyctryreg" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Serviceindicator" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Flowtypeheader" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Creditcontrolarea" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Reportingctryreg" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Eutriangulardeal" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Planninglevel" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Planningdate" Type="Edm.Date"/>
+                <Property Name="Negativepostingheader" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Taxcodeheader" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Taxreportingdate" Type="Edm.Date"/>
+                <Property Name="Taxfulfilldate" Type="Edm.Date"/>
+                <Property Name="Taxdate" Type="Edm.Date"/>
+                <Property Name="Taxctryreg" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Exchangerate" Type="Edm.String" Nullable="false" MaxLength="9"/>
+                <Property Name="Translationdate" Type="Edm.Date"/>
+                <Property Name="Cashflowheader" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Cashflowheaderdesc" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Name2" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Name3" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Name4" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="City" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="Postalcode" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Pobox" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Poboxwithoutno" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Poboxpostalcode" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Countryregion" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Region" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Emailaddress" Type="Edm.String" Nullable="false" MaxLength="241"/>
+                <Property Name="Bankcountryregion" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Bankkey" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="Bankaccount" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Swiftbic" Type="Edm.String" Nullable="false" MaxLength="11"/>
+                <Property Name="Bankreference" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="Bankcontrolkey" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Iban" Type="Edm.String" Nullable="false" MaxLength="34"/>
+                <Property Name="Paymentsystem" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="Aliastype" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="Bankaccountalias" Type="Edm.String" Nullable="false" MaxLength="255"/>
+                <Property Name="Liableforvat" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Taxtype" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Taxnumbertype" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Taxnumber1" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="Taxnumber2" Type="Edm.String" Nullable="false" MaxLength="11"/>
+                <Property Name="Taxnumber3" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Taxnumber4" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Taxnumber5" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                <Property Name="Vatregistrationno" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="NaturalPerson" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="SalesEqualizationTax" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="TypeofBusiness" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="TypeofIndustry" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="Repsname" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="InstructionKey" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="DmeIndicator" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="CompanyCodeAgain" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="GlAccount" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ItemText" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="DebitCredit" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="GrossItemAmount" Type="Edm.Decimal" Nullable="false" Precision="27" Scale="2"/>
+                <Property Name="TaxcodeItem" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="TaxjurisDiction" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="AssignmentItem" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="CostCenter" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ProfitCenter" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PartnerProfitCenter" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="OrderNo" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="ReportingSegment" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="NegativePostingItem" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="WbsElement" Type="Edm.String" Nullable="false" MaxLength="24"/>
+                <Property Name="BusinessAreaitem" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="BusinessProcess" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="ControllingArea" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Activitytype" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="CostObject" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="FunctionalArea" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="WithoutCashdisCount" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="PersonnelNumber" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="SalesDocument" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="SalesDocumentItem" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="SchedulelineNumber" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Network" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="OperationActivity" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="WorkItemId" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CommitmentItem" Type="Edm.String" Nullable="false" MaxLength="24"/>
+                <Property Name="FundsCenter" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="TaxbaseAmtInTransactionCurr" Type="Edm.Decimal" Nullable="false" Precision="27" Scale="2"/>
+                <Property Name="YFund" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="YGrant" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="BaseUnitOfMeasure" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Quantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="PartnerBusinessAreaItem" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="ServiceDocumentType" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="ServiceDocument" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ServiceDocumentItem" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="FinancialTransactionType" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="JointVenture" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="EquityGroup" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="RecoveryIndicator" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="TradingPartnerno" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="CashflowItem" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CashflowItemdesc" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                <Property Name="ProviderContract" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ContractItem" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="CustomerItem" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CustomerGroup" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Industry" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CountryRegionKey" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="SalesOrganization" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="DistributionChannel" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Division" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="BillingType" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="LongText" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="CreatedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="CreatedDate" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="ChangedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="ChangedDate" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.EntityControl"/>
+                <Property Name="__OperationControl" Type="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocOperationControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.zsd_upload_fidoc.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.I_DraftAdministrativeDataType"/>
+                <NavigationProperty Name="SiblingEntity" Type="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType"/>
+            </EntityType>
+            <EntityType Name="I_DraftAdministrativeDataType">
+                <Key>
+                    <PropertyRef Name="DraftUUID"/>
+                    <PropertyRef Name="DraftEntityType"/>
+                </Key>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="DraftEntityType" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="CreatedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="DraftAccessType" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="ProcessingStartDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="InProcessByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="DraftIsKeptByUser" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="EnqueueStartDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftIsCreatedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftIsLastChangedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftIsProcessedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="CreatedByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="LastChangedByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="InProcessByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+            </EntityType>
+            <ComplexType Name="DataFIDocOperationControl">
+                <Property Name="Edit" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="EntityControl">
+                <Property Name="Deletable" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Updatable" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="ZI_FILE_ABS">
+                <Property Name="fileContent" Type="Edm.Binary" Nullable="false"/>
+                <Property Name="fileExtension" Type="Edm.String" Nullable="false"/>
+                <Property Name="fileName" Type="Edm.String" Nullable="false"/>
+                <Property Name="mimeType" Type="Edm.String" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="SAP__Message">
+                <Property Name="code" Type="Edm.String" Nullable="false"/>
+                <Property Name="message" Type="Edm.String" Nullable="false"/>
+                <Property Name="target" Type="Edm.String"/>
+                <Property Name="additionalTargets" Type="Collection(Edm.String)" Nullable="false"/>
+                <Property Name="transition" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="numericSeverity" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="longtextUrl" Type="Edm.String"/>
+            </ComplexType>
+            <Action Name="Edit" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType" Nullable="false"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType" Nullable="false"/>
+            </Action>
+            <Action Name="Discard" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType" Nullable="false"/>
+            </Action>
+            <Action Name="Activate" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType" Nullable="false"/>
+            </Action>
+            <Action Name="Resume" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType" Nullable="false"/>
+            </Action>
+            <Action Name="downloadFile" IsBound="true">
+                <Parameter Name="_it" Type="Collection(com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType)" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.ZI_FILE_ABS" Nullable="false"/>
+            </Action>
+            <Action Name="postFI" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="Collection(com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType)" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType" Nullable="false"/>
+            </Action>
+            <Action Name="fileUpload" IsBound="true">
+                <Parameter Name="_it" Type="Collection(com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType)" Nullable="false"/>
+                <Parameter Name="mimeType" Type="Edm.String" Nullable="false"/>
+                <Parameter Name="fileName" Type="Edm.String" Nullable="false"/>
+                <Parameter Name="fileContent" Type="Edm.Binary" Nullable="false"/>
+                <Parameter Name="fileExtension" Type="Edm.String" Nullable="false"/>
+            </Action>
+            <Action Name="Prepare" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType" Nullable="false"/>
+            </Action>
+            <EntityContainer Name="Container">
+                <EntitySet Name="DataFIDoc" EntityType="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType">
+                    <NavigationPropertyBinding Path="DraftAdministrativeData" Target="I_DraftAdministrativeData"/>
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="DataFIDoc"/>
+                </EntitySet>
+                <EntitySet Name="I_DraftAdministrativeData" EntityType="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.I_DraftAdministrativeDataType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.DataFIDocType/Uuid">
+                <Annotation Term="SAP__common.Label" String="UUID"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Heading" String="UUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="16 Byte UUID in 16 Bytes (Raw Format)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Messagetxt">
+                <Annotation Term="SAP__common.Label" String="Message Text"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Messagetype">
+                <Annotation Term="SAP__common.Label" String="Message Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Accountingdocument">
+                <Annotation Term="SAP__common.Label" String="Accounting Document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Documentsequenceno">
+                <Annotation Term="SAP__common.Label" String="*Document Sequence No."/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Companycode">
+                <Annotation Term="SAP__common.Label" String="*Company Code (4)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Customer">
+                <Annotation Term="SAP__common.Label" String="*Customer (10)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Vendor">
+                <Annotation Term="SAP__common.Label" String="Vendor"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Reference">
+                <Annotation Term="SAP__common.Label" String="Reference (16)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Documentdate">
+                <Annotation Term="SAP__common.Label" String="*Document Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Postingdate">
+                <Annotation Term="SAP__common.Label" String="*Posting Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Documenttype">
+                <Annotation Term="SAP__common.Label" String="*Document Type (2)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Documentheadertext">
+                <Annotation Term="SAP__common.Label" String="Document Header Text (25)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Transactioncurrency">
+                <Annotation Term="SAP__common.Label" String="*Transaction Currency (5)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Taxdate">
+                <Annotation Term="SAP__common.Label" String="Tax Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Exchangerate">
+                <Annotation Term="SAP__common.Label" String="Exchange Rate (9)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Translationdate">
+                <Annotation Term="SAP__common.Label" String="Translation Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/GlAccount">
+                <Annotation Term="SAP__common.Label" String="*G/L Account (10)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/Division">
+                <Annotation Term="SAP__common.Label" String="Division (2)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/BillingType">
+                <Annotation Term="SAP__common.Label" String="Billing Type (4)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/LongText">
+                <Annotation Term="SAP__common.Label" String="Long Text (100)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/CreatedByUser">
+                <Annotation Term="SAP__common.Label" String="Created By User"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Created By"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Created By User"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_CREATION_USER"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/CreatedDate">
+                <Annotation Term="SAP__common.Label" String="Created Date"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Heading" String="Created On"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Creation Date Time"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_CREATION_TSTMPL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/ChangedByUser">
+                <Annotation Term="SAP__common.Label" String="Changed By User"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Changed By"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Last Changed By User"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_LASTCHANGE_USER"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/ChangedDate">
+                <Annotation Term="SAP__common.Label" String="Changed Date"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Heading" String="Changed On"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Last Change Date Time"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_LASTCHANGE_TSTMPL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/HasDraftEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has Draft"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has draft document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/DraftEntityCreationDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/DraftEntityLastChangeDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/HasActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/IsActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Is active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Is active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType/__OperationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/DataFIDoc">
+                <Annotation Term="SAP__common.DraftRoot">
+                    <Record>
+                        <PropertyValue Property="EditAction" String="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.Edit"/>
+                        <PropertyValue Property="DiscardAction" String="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.Discard"/>
+                        <PropertyValue Property="ActivationAction" String="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.Activate"/>
+                        <PropertyValue Property="PreparationAction" String="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.Prepare"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group "/>
+                        <PropertyValue Property="SearchSyntax" String="https://url.sap/odata-search"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityCreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityLastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="DeltaUpdateSupported" Bool="true"/>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>DraftAdministrativeData</PropertyPath>
+                                <PropertyPath>SiblingEntity</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeepUpdateSupport">
+                    <Record>
+                        <PropertyValue Property="ContentIDSupported" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Path="__EntityControl/Deletable"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Edit(SAP__self.DataFIDocType)/PreserveChanges">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="TRUE"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data element for domain BOOLE: TRUE (='X') and FALSE (=' ')"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Edit(SAP__self.DataFIDocType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/Edit"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocType">
+                <Annotation Term="SAP__common.Label" String="Projection View Data Upload FI Document"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="General"/>
+                            <PropertyValue Property="ID" String="General"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification#General"/>
+                            <Annotation Term="SAP__UI.PartOfPreview" Bool="true"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="General"/>
+                        <PropertyValue Property="TypeNamePlural" String="Upload Finacial Document"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Value" Path="Reference"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Uuid"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Messagetxt"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Messagetype"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Accountingdocument"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Documentsequenceno"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Companycode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Reference"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Documentdate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Postingdate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Taxdate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Documenttype"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Documentheadertext"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Transactioncurrency"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Translationdate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Exchangerate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Customer"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Vendor"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="GlAccount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Division"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BillingType"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="LongText"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CreatedByUser"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CreatedDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ChangedByUser"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ChangedDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Post"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.postFI(Collection(com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType))"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Uuid"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Messagetxt"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Messagetype"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Accountingdocument"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Documentsequenceno"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Companycode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Reference"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Documentdate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Postingdate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Taxdate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Documenttype"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Documentheadertext"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Transactioncurrency"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Translationdate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Exchangerate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Customer"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Vendor"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="GlAccount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Division"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BillingType"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="LongText"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CreatedByUser"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CreatedDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ChangedByUser"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ChangedDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Post"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zsd_upload_fidoc.v0001.postFI(Collection(com.sap.gateway.srvd.zsd_upload_fidoc.v0001.DataFIDocType))"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftEntityType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Entity ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreatedByUser">
+                <Annotation Term="SAP__common.Text" Path="CreatedByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_draftadministrativeuservh/0001;ps='srvd-zsd_upload_fidoc-0001';va='com.sap.gateway.srvd.zsd_upload_fidoc.v0001.et-i_draftadministrativedata.createdbyuser'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Draft Created By"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangedByUser">
+                <Annotation Term="SAP__common.Text" Path="LastChangedByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_draftadministrativeuservh/0001;ps='srvd-zsd_upload_fidoc-0001';va='com.sap.gateway.srvd.zsd_upload_fidoc.v0001.et-i_draftadministrativedata.lastchangedbyuser'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed By"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftAccessType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Access Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/InProcessByUser">
+                <Annotation Term="SAP__common.Text" Path="InProcessByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process By"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType">
+                <Annotation Term="SAP__common.Label" String="Draft Administration Data"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/I_DraftAdministrativeData">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group "/>
+                        <PropertyValue Property="SearchSyntax" String="https://url.sap/odata-search"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="LastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.ReadRestrictions">
+                    <Record>
+                        <PropertyValue Property="Readable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="IANATimezoneFormat" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="TextDirectionLayout" Bool="true"/>
+                        <PropertyValue Property="Treeview" Bool="true"/>
+                        <PropertyValue Property="UploadToFileShare" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftUUID">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft (Technical ID)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/ProcessingStartDateTime">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process Since"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsKeptByUser">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Is Kept By User"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/EnqueueStartDateTime">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Locked Since"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsCreatedByMe">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created By Me"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsLastChangedByMe">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed By Me"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsProcessedByMe">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process By Me"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreatedByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created By (Description)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangedByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed By (Description)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/InProcessByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process By (Description)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreationDateTime">
+                <Annotation Term="SAP__common.Label" String="Draft Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangeDateTime">
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DataFIDocOperationControl/Edit">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.EntityControl/Deletable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.EntityControl/Updatable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
