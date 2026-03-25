@@ -1,0 +1,29 @@
+{
+  "generationParameters": {
+    "generationDate": "Tue Sep 09 2025 13:36:39 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "SAP System (ABAP On-Premise)",
+    "metadataFilename": "",
+    "serviceUrl": "https://my428934.s4hana.cloud.sap/sap/opu/odata/sap/ZSB_ACCPAY_DETAIL",
+    "appName": "z_accpay_detail",
+    "appTitle": "Báo cáo chi tiết công nợ phải trả",
+    "appDescription": "",
+    "appNamespace": "",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.136.7",
+    "enableCodeAssist": false,
+    "enableEslint": false,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.18.6",
+    "template": "List Report Page V2",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "ZC_ACCPAY_DETAIL"
+      }
+    ],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}

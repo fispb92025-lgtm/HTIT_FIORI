@@ -1,0 +1,41 @@
+{
+    "fileName": "id_1758612390621_56_propertyChange",
+    "fileType": "change",
+    "changeType": "propertyChange",
+    "moduleName": "",
+    "reference": "zaccpaysummary",
+    "packageName": "",
+    "content": {
+        "property": "growingThreshold",
+        "newValue": 100000
+    },
+    "selector": {
+        "id": "zaccpaysummary::sap.suite.ui.generic.template.ListReport.view.ListReport::ZC_ACCPAY_SUMMARY--responsiveTable",
+        "idIsLocal": false,
+        "type": "sap.m.Table"
+    },
+    "layer": "CUSTOMER_BASE",
+    "texts": {},
+    "namespace": "apps/zaccpaysummary/changes/",
+    "projectId": "",
+    "creation": 1758612390621,
+    "originalLanguage": "",
+    "support": {
+        "generator": "changeUtils: SAPFioriTools",
+        "service": "",
+        "user": "",
+        "sapui5Version": "1.130.11",
+        "sourceChangeFileName": "",
+        "compositeCommand": ""
+    },
+    "oDataInformation": {},
+    "dependentSelector": {},
+    "validAppVersions": {
+        "from": "0.0.1",
+        "to": "0.0.1",
+        "creation": "0.0.1"
+    },
+    "jsOnly": false,
+    "variantReference": "",
+    "appDescriptorChange": false
+}

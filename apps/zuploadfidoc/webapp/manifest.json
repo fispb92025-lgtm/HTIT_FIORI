@@ -1,0 +1,196 @@
+{
+  "_version": "1.73.1",
+  "sap.app": {
+    "id": "zuploadfidoc",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.19.1",
+      "toolsId": "b0283d56-c40f-4525-9275-0cb6faa403e6"
+    },
+    "dataSources": {
+      "annotation": {
+        "type": "ODataAnnotation",
+        "uri": "annotations/annotation.xml",
+        "settings": {
+          "localUri": "annotations/annotation.xml"
+        }
+      },
+      "mainService": {
+        "uri": "/sap/opu/odata4/sap/zsb_upload_fidoc/srvd/sap/zsd_upload_fidoc/0001/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "annotation"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "zuploadfidoc-display": {
+          "semanticObject": "zuploadfidoc",
+          "action": "display",
+          "title": "{{zuploadfidoc-display.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.136.9",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "zuploadfidoc.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "DataFIDocList",
+          "target": "DataFIDocList"
+        },
+        {
+          "pattern": "DataFIDoc({key}):?query:",
+          "name": "DataFIDocObjectPage",
+          "target": "DataFIDocObjectPage"
+        }
+      ],
+      "targets": {
+        "DataFIDocList": {
+          "type": "Component",
+          "id": "DataFIDocList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/DataFIDoc",
+              "variantManagement": "Page",
+              "navigation": {
+                "DataFIDoc": {
+                  "detail": {
+                    "route": "DataFIDocObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "GridTable"
+                  },
+                  "actions": {
+                    "ListReportExt": {
+                      "press": ".extension.zuploadfidoc.ext.controller.ListReportExt.UploadFile",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": false,
+                      "text": "Upload File"
+                    },
+                    "PostDocument": {
+                      "press": ".extension.zuploadfidoc.ext.controller.ListReportExt.PostDocument",
+                      "visible": false,
+                      "enabled": false,
+                      "requiresSelection": true,
+                      "text": "Post Document"
+                    },
+                    "GetXML": {
+                      "press": ".extension.zuploadfidoc.ext.controller.ListReportExt.GetXML",
+                      "visible": false,
+                      "enabled": false,
+                      "requiresSelection": true,
+                      "text": "Get XML"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "DataFIDocObjectPage": {
+          "type": "Component",
+          "id": "DataFIDocObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/DataFIDoc"
+            }
+          }
+        }
+      }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ListReport.ListReportController": {
+            "controllerName": "zuploadfidoc.ext.controller.ListReportExt"
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}
