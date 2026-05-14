@@ -1,0 +1,29 @@
+{
+  "generationParameters": {
+    "generationDate": "Sun Apr 26 2026 06:25:25 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "SAP System (ABAP On-Premise)",
+    "metadataFilename": "",
+    "serviceUrl": "https://my428934.s4hana.cloud.sap/sap/opu/odata4/sap/zrap_ui_data_fidoc_o4/srvd/sap/zrap_ui_data_fidoc/0001/",
+    "appName": "zrapuploadfidoc",
+    "appTitle": "Upload Financial Documents",
+    "appDescription": "An SAP Fiori application.",
+    "appNamespace": "",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.142.10",
+    "enableEslint": true,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.22.0",
+    "template": "List Report Page V4",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "DataDocument"
+      }
+    ],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```",
+    "valueHelpDownloaded": true
+  }
+}
