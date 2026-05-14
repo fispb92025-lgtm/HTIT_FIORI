@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SUPPORT',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Support.v1" Alias="SAP__support"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../../srvd/sap/zrap_ui_data_fidoc/0001/$metadata">
+        <edmx:Include Namespace="com.sap.gateway.srvd.zrap_ui_data_fidoc.v0001" Alias="SAP__ParentService"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd_f4.zrap_r_file_fidoc.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="ZRAP_R_FILE_FIDOCType">
+                <Key>
+                    <PropertyRef Name="UUID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="UUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="Zcount" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Attachment" Type="Edm.Stream"/>
+                <Property Name="MimeType" Type="Edm.String" Nullable="false" MaxLength="128"/>
+                <Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="128"/>
+                <Property Name="CountLine" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="CreatedBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="LocalLastChangedBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="LocalLastChangedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="ZRAP_R_FILE_FIDOC" EntityType="com.sap.gateway.srvd_f4.zrap_r_file_fidoc.v0001.ZRAP_R_FILE_FIDOCType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.ZRAP_R_FILE_FIDOCType/UUID">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="UUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="16 Byte UUID in 16 Bytes (Raw Format)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZRAP_R_FILE_FIDOCType/Attachment">
+                <Annotation Term="SAP__core.ContentDisposition">
+                    <Record>
+                        <PropertyValue Property="Filename" Path="FileName"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.MediaType" Path="MimeType"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZRAP_R_FILE_FIDOCType/MimeType">
+                <Annotation Term="SAP__core.IsMediaType"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZRAP_R_FILE_FIDOCType/CreatedBy">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Created By"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Created By User"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_CREATION_USER"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZRAP_R_FILE_FIDOCType">
+                <Annotation Term="SAP__common.CreatedBy" Path="CreatedBy"/>
+                <Annotation Term="SAP__common.CreatedAt" Path="CreatedAt"/>
+                <Annotation Term="SAP__common.ChangedAt" Path="LastChangedAt"/>
+                <Annotation Term="SAP__common.Label" String="###GENERATED Core Data Service Entity"/>
+                <Annotation Term="SAP__common.SAPObjectNodeType">
+                    <Record>
+                        <PropertyValue Property="Name" String="ZRAP_FILE_FIDOC"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZRAP_R_FILE_FIDOCType/CreatedAt">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="Created On"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Creation Date Time"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_CREATION_TSTMPL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZRAP_R_FILE_FIDOCType/LocalLastChangedBy">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Changed By"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Local Instance Last Changed By User"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_LOCINST_LASTCHANGE_USER"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZRAP_R_FILE_FIDOCType/LocalLastChangedAt">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="Changed On"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Local Instance Last Change Date Time"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_LOCINST_LASTCHANGE_TSTMPL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZRAP_R_FILE_FIDOCType/LastChangedAt">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="Changed On"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Last Change Date Time"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_LASTCHANGE_TSTMPL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZRAP_R_FILE_FIDOCType/HasDraftEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has Draft"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has draft document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZRAP_R_FILE_FIDOCType/DraftEntityCreationDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZRAP_R_FILE_FIDOCType/DraftEntityLastChangeDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZRAP_R_FILE_FIDOCType/HasActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZRAP_R_FILE_FIDOCType/IsActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Is active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Is active document"/>
+            </Annotations>
+            <Annotations Target="SAP__ParentService.DataDocumentType/UuidFile">
+                <Annotation Term="SAP__common.ValueListMapping">
+                    <Record>
+                        <PropertyValue Property="Label" String="###GENERATED Core Data Service Entity"/>
+                        <PropertyValue Property="CollectionPath" String="ZRAP_R_FILE_FIDOC"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="SAP__common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="UuidFile"/>
+                                    <PropertyValue Property="ValueListProperty" String="UUID"/>
+                                </Record>
+                                <Record Type="SAP__common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Zcount"/>
+                                </Record>
+                                <Record Type="SAP__common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Status"/>
+                                </Record>
+                                <Record Type="SAP__common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Attachment"/>
+                                </Record>
+                                <Record Type="SAP__common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MimeType"/>
+                                </Record>
+                                <Record Type="SAP__common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="FileName"/>
+                                </Record>
+                                <Record Type="SAP__common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CountLine"/>
+                                </Record>
+                                <Record Type="SAP__common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CreatedBy"/>
+                                </Record>
+                                <Record Type="SAP__common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CreatedAt"/>
+                                </Record>
+                                <Record Type="SAP__common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LocalLastChangedBy"/>
+                                </Record>
+                                <Record Type="SAP__common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LocalLastChangedAt"/>
+                                </Record>
+                                <Record Type="SAP__common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LastChangedAt"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZRAP_R_FILE_FIDOC">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="DeltaUpdateSupported" Bool="true"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeepUpdateSupport">
+                    <Record>
+                        <PropertyValue Property="ContentIDSupported" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection>
+                        <PropertyPath>LocalLastChangedAt</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="IANATimezoneFormat" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="100"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="5000"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="TextDirectionLayout" Bool="true"/>
+                        <PropertyValue Property="Treeview" Bool="true"/>
+                        <PropertyValue Property="UploadToFileShare" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
